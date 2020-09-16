@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th>
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Demo</title>
+</head>
+<body>
+<h3>Thymeleaf Loop</h3>
+<table>
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Grade</th>
+    </tr>
+
+    <tr th:each="student : ${list}">
+        <td th:text="${student.Id}"></td>
+        <td th:text="${student.studentName}"></td>
+        <td th:text="${student.grade}"></td>
+    </tr>
+</table>
+</body>
+</html>

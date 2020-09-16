@@ -1,0 +1,23 @@
+package com.udacity.springbootexceptions.exceptions;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
+
+import java.util.Properties;
+
+@Configuration
+public class MySimplemappingExceptionResolver {
+  
+  @Bean
+  public SimpleMappingExceptionResolver simpleMappingExceptionResolver() {
+    SimpleMappingExceptionResolver exceptionResolver = new SimpleMappingExceptionResolver();
+    Properties mapping = new Properties();
+    mapping.put("java.lang.ArithmeticException", "mathError");
+    mapping.put("java.lang.NullPointerException", "nullPointerError");
+    exceptionResolver.setExceptionMappings(mapping);
+    
+    return exceptionResolver;
+  }
+  
+}
